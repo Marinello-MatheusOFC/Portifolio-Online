@@ -136,6 +136,7 @@ gotas[x]=1;
 );
 
 }
+// MODAL DAS IMAGENS
 
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
@@ -152,14 +153,118 @@ document.querySelectorAll(".gallery img").forEach(img => {
 
 });
 
-closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
+if(closeBtn){
+
+    closeBtn.addEventListener("click", () => {
+
+        modal.style.display = "none";
+
+    });
+
+}
+
+if(modal){
+
+    modal.addEventListener("click", (e) => {
+
+        if(e.target === modal){
+
+            modal.style.display = "none";
+
+        }
+
+    });
+
+}
+
+// MOSTRAR MAIS
+
+const btnMostrar = document.getElementById("mostrarMais");
+
+if(btnMostrar){
+
+    btnMostrar.addEventListener("click", () => {
+
+        document.querySelectorAll(".extra-img").forEach(img => {
+
+            img.style.display = "block";
+
+        });
+
+        btnMostrar.style.display = "none";
+
+    });
+
+}
+
+// MODAL DAS IMAGENS
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".gallery img").forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+
+    });
+
 });
 
-modal.addEventListener("click", (e) => {
+if(closeBtn){
 
-    if(e.target === modal){
+    closeBtn.addEventListener("click", () => {
+
         modal.style.display = "none";
-    }
 
+    });
+
+}
+
+if(modal){
+
+    modal.addEventListener("click", (e) => {
+
+        if(e.target === modal){
+
+            modal.style.display = "none";
+
+        }
+
+    });
+
+}
+
+// BOTÃO MOSTRAR MAIS
+
+const btnMostrar = document.getElementById("mostrarMais");
+const imagensExtras = document.querySelectorAll(".extra-img");
+
+if(btnMostrar){
+
+    btnMostrar.addEventListener("click", () => {
+
+        imagensExtras.forEach(img => {
+            img.classList.toggle("mostrar");
+        });
+
+        if(btnMostrar.textContent === "Mostrar Mais"){
+            btnMostrar.textContent = "Mostrar Menos";
+        }else{
+            btnMostrar.textContent = "Mostrar Mais";
+        }
+
+    });
+
+}
+
+const btnMostrar = document.getElementById("mostrarMais");
+
+console.log("BOTÃO:", btnMostrar);
+
+btnMostrar.addEventListener("click", () => {
+    alert("clicou");
 });
