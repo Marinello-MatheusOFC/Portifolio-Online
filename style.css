@@ -427,16 +427,52 @@ footer p:first-child{
     }
 }
 
-.extra-img{
-    display:none;
+.extra-img {
+    display: none;
 }
 
-.extra-img.mostrar{
-    display:block;
+.extra-img.mostrar {
+    display: grid; /* Mantém o comportamento fluido do grid da galeria */
 }
 
-.btn-container{
-    display:flex;
-    justify-content:center;
-    margin-top:30px;
+/* CONTAINER DO BOTÃO */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
+
+/* ESTILIZAÇÃO DO BOTÃO MOSTRAR MAIS/MENOS */
+.btn-mostrar-mais {
+    background: rgba(0, 212, 255, 0.05); /* Fundo sutil de vidro */
+    border: 1px solid rgba(0, 212, 255, 0.4); /* Borda neon suave */
+    color: #00d4ff;
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Deixa o texto em caixa alta, mais imponente */
+    border-radius: 12px; /* Cantos levemente arredondados combinando com os cards */
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Efeito blur de vidro no fundo */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* EFEITO AO PASSAR O MOUSE (HOVER) */
+.btn-mostrar-mais:hover {
+    background: #00d4ff;
+    color: #050816; /* Inverte a cor do texto com a do fundo do site */
+    transform: translateY(-3px); /* Sobe de leve */
+    box-shadow: 
+        0 0 20px rgba(0, 212, 255, 0.6),
+        0 0 40px rgba(0, 212, 255, 0.3); /* Brilho neon intenso */
+}
+
+/* EFEITO AO CLICAR (ACTIVE) */
+.btn-mostrar-mais:active {
+    transform: translateY(-1px); /* Feedback de clique */
+}
+
+
